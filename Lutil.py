@@ -45,7 +45,7 @@ def fileLog(name, date, data):
     now = datetime.datetime.now()
     timeCheck = now.strftime("%Y-%m-%d %H:%M" + ':')
     f = open(name + '.txt', 'a')
-    if date == 'true':
+    if date == True:
         f.write(timeCheck + data)
-    elif data == 'false':
+    elif data == False:
         f.write(data)
