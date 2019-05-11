@@ -1,4 +1,6 @@
 import os
+import datetime
+import platform
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -25,21 +27,22 @@ def lengthChecker(target, limit):
 def numCheck(target):
     try:
         int(target)
-        numCheckResult = 'pass'
+        numCheckResult = True
         return numCheckResult
     except ValueError:
-        numCheckResult = 'fail'
+        numCheckResult = False
         return numCheckResult
 
 def strCheck(target):
     if target.isalpha():
-        strCheckResult = 'pass'
+        strCheckResult = True
         return strCheckResult
     else:
-        strCheckResult = 'fail'
+        strCheckResult = False
         return strCheckResult
 
 def fileLog(name, date, data):
+    now = datetime.datetime.now()
     timeCheck = now.strftime("%Y-%m-%d %H:%M" + ':')
     f = open(name + '.txt', 'a')
     if date == 'true':
